@@ -38,20 +38,19 @@ export const menuLinks: { path: string; title: string }[] = [
 	// 	path: "/",
 	// 	title: "Home",
 	// },
-	/* Temporarily disabled blog section
 	{
 		path: "/posts/",
 		title: "Blog",
 	},
-	*/
 	// {
 	// 	path: "/notes/",
 	// 	title: "Notes",
 	// },
-	{
-		path: "/projects/",
-		title: "Projects",
-	},
+	// Projects section disabled temporarily
+	// {
+	// 	path: "/projects/",
+	// 	title: "Projects",
+	// },
 ];
 
 // https://expressive-code.com/reference/configuration/

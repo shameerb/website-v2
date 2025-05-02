@@ -5,7 +5,7 @@ publishDate: "2024-03-20"
 updatedDate: "2024-03-20"
 showTOC: true
 tags: ["deep work", "focus", "productivity", "longform"]
-draft: false
+draft: true
 ---
 
 # The Art of Deep Work
@@ -19,7 +19,7 @@ In a world full of distractions, the ability to focus deeply is a superpower. Th
 ### The Myth of Multitasking
 
 Research shows that multitasking is a myth. Our brains are not wired to handle multiple complex tasks at once. Instead, we switch rapidly between tasks, losing efficiency and depth each time.
-
+    
 ### Flow States
 
 Flow is a mental state where you are fully immersed in a task. Achieving flow requires clear goals, immediate feedback, and a balance between challenge and skill.
