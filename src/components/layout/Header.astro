@@ -1,0 +1,112 @@
+---
+import { menuLinks, siteConfig } from "@/site.config";
+// import Search from "@/components/Search.astro";
+import ThemeToggle from "@/components/ThemeToggle.astro";
+
+interface MenuLink {
+	path: string;
+	title: string;
+}
+---
+
+<header class="header">
+	<div class="header__inner">
+		<a href="/" class="header__title">
+			{siteConfig.title}
+		</a>
+		<nav class="header__nav">
+			{
+				menuLinks.map(({ path, title }: MenuLink) => (
+					<a href={path} class="header__link">
+						{title}
+					</a>
+				))
+			}
+			<div class="header__actions">
+				<!-- <Search /> -->
+				<ThemeToggle />
+			</div>
+		</nav>
+	</div>
+</header>
+
+<style>
+	.header {
+		position: relative;
+		padding: 0 0 2.5rem 0;
+	}
+
+	.header__inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 48rem; /* matches max-w-3xl */
+		margin: 0 auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	@media (min-width: 640px) {
+		.header__inner {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	.header__title {
+		font-size: 1.1rem;
+		font-weight: 500;
+		text-decoration: none;
+		color: var(--color-text);
+		font-family: "Inter", "Work Sans", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		opacity: 0.9;
+		margin: 0;
+		padding: 0;
+	}
+
+	.header__nav {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.header__link {
+		text-decoration: none;
+		color: var(--color-text);
+		font-weight: 400;
+		font-size: 0.9rem;
+		font-family: "Inter", "Work Sans", sans-serif;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		opacity: 0.9;
+	}
+
+	.header__link:hover {
+		color: var(--color-primary);
+	}
+
+	.header__actions {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-left: 0.5rem;
+	}
+
+	.header__actions :global(button) {
+		height: 1.75rem;
+		width: 1.75rem;
+		padding: 0.25rem;
+	}
+
+	.header__actions :global(svg) {
+		height: 1.25rem;
+		width: 1.25rem;
+	}
+
+	@media (max-width: 768px) {
+		.header__nav {
+			gap: 0.5rem;
+		}
+	}
+</style>

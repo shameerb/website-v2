@@ -1,0 +1,25 @@
+## todos
+- individual blog post
+    - [ ] the blog content (text) width is smaller than the article body width. it should be same and wide. 
+    - [x] change individual blog post title size to be bigger than h1
+    - [x] add a underline below h1 and h2 inside blog contents
+    - [x] remove the updated date from the blog post
+    - [x] move the min to read to the right side of date
+    - [x] center align the title of the blog posts
+    - [x] temporary disable the TOC. Keep the code but temporarily disable using a flag at the config level
+    - [x] the date and min to read needs to be lighter color
+    - [x] main title needs to be bigger than h1 of the body
+- [ ] reduce the weight of the font across
+- [x] add some padding and space between header and the blog content - main-header
+- blogs list page
+- header
+    - [ ] remove the padding at the top, the header is too low
+    - [ ] add some good padding below the header to the main body
+- tags
+    - [x] tag styling needs to be lighter color
+    - [ ] tags across pages should be same color (grayed), blog list, individual blog, filter etc.
+- home page
+    - [x] remove the note section
+    - [x] remove the social media handles in the middle. it should only be at the end. 
+    - [x] increase the size of the social media handles at the footer
+    - [ ] change the title Post, Notes to lighter, thinner and smaller font style, gray color

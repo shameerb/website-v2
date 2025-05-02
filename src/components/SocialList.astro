@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components";
+
+/** 
+	Uses https://www.astroicon.dev/getting-started/
+	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
+	Only installed pack is: @iconify-json/mdi
+*/
+const socialLinks: {
+	friendlyName: string;
+	isWebmention?: boolean;
+	link: string;
+	name: string;
+}[] = [
+	{
+		friendlyName: "Github",
+		link: "https://github.com/chrismwilliams/astro-cactus",
+		name: "mdi:github",
+	},
+];
+---
+
+<ul class="flex items-center gap-x-2">
+	{
+		socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
+			<li class="flex">
+				<a
+					class="hover:text-accent inline-block"
+					href={link}
+					rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
+					target="_blank"
+				>
+					<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
+					<span class="sr-only">{friendlyName}</span>
+				</a>
+			</li>
+		))
+	}
+</ul>

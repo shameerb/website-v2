@@ -1,0 +1,43 @@
+---
+import { generateToc } from "@/utils/generateToc";
+import type { MarkdownHeading } from "astro";
+import TOCHeading from "./TOCHeading.astro";
+
+interface Props {
+	headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+const toc = generateToc(headings);
+---
+
+<details
+	open
+	class="border-s border-[var(--color-ui-2)] ps-4 lg:sticky lg:top-12 lg:order-2 lg:-me-32 lg:basis-64"
+>
+	<summary
+		class="heading-3 hover:marker:text-accent flex inline-block cursor-pointer items-center border-b border-[var(--color-ui-2)] pb-1 text-xs font-medium text-[var(--color-tx)]"
+		><span class="toggle-icon mr-1">▼</span>Table of Contents</summary
+	>
+	<nav class="ms-2 lg:w-full">
+		<ol class="mt-3">
+			{toc.map((heading) => <TOCHeading heading={heading} />)}
+		</ol>
+	</nav>
+</details>
+
+<style>
+	/* Removed the book-index styling with the vertical line */
+	details[open] .toggle-icon {
+		display: inline-block;
+		transform: rotate(0deg);
+		transition: transform 0.2s ease;
+	}
+
+	details:not([open]) .toggle-icon {
+		display: inline-block;
+		transform: rotate(-90deg);
+		transition: transform 0.2s ease;
+	}
+</style>
