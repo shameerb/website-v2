@@ -1,23 +1,50 @@
 ---
 import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/site.config";
 
 /** 
 	Uses https://www.astroicon.dev/getting-started/
 	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
 	Only installed pack is: @iconify-json/mdi
 */
-const socialLinks: {
+
+// Define the type for social links
+interface SocialLink {
 	friendlyName: string;
 	isWebmention?: boolean;
 	link: string;
 	name: string;
-}[] = [
-	{
-		friendlyName: "Github",
-		link: "https://github.com/chrismwilliams/astro-cactus",
+}
+
+// Build social links array
+const socialLinks: SocialLink[] = [];
+
+// Add GitHub if configured
+if (siteConfig.socialLinks?.github) {
+	socialLinks.push({
+		friendlyName: "GitHub",
+		link: siteConfig.socialLinks.github,
 		name: "mdi:github",
-	},
-];
+	});
+}
+
+// Add Twitter if configured
+if (siteConfig.socialLinks?.twitter) {
+	socialLinks.push({
+		friendlyName: "Twitter",
+		link: siteConfig.socialLinks.twitter,
+		name: "mdi:twitter",
+	});
+}
+
+// Add LinkedIn if configured
+if (siteConfig.socialLinks?.linkedin) {
+	socialLinks.push({
+		friendlyName: "LinkedIn",
+		link: siteConfig.socialLinks.linkedin,
+		name: "mdi:linkedin",
+	});
+}
 ---
 
 <ul class="flex items-center gap-x-2">

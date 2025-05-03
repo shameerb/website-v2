@@ -10,6 +10,12 @@ export interface SiteConfig {
 	title: string;
 	url: string;
 	enableTOC?: boolean;
+	socialLinks?: {
+		github?: string;
+		twitter?: string;
+		linkedin?: string;
+		[key: string]: string | undefined;
+	};
 }
 
 export interface PaginationLink {

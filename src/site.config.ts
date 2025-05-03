@@ -30,6 +30,12 @@ export const siteConfig: SiteConfig = {
 	url: "https://shameerb.com/",
 	// Flag to disable TOC
 	enableTOC: false,
+	// Social media accounts
+	socialLinks: {
+		github: "https://github.com/shameerb",
+		twitter: "https://x.com/shameer_123",
+		linkedin: "https://linkedin.com/in/shameerb"
+	},
 };
 
 // Used to generate links in both the Header & Footer.
